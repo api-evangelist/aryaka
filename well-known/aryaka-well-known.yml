@@ -1,0 +1,107 @@
+generated: '2026-08-02'
+method: probed
+source: live HTTPS probes of every Aryaka host in apis.yml
+note: >-
+  www.aryaka.com is a WordPress site with a catch-all handler that answers HTTP 200 with
+  the site's "Page Not Found" HTML shell for every unknown path — including every
+  /.well-known/* path probed. Those 200s are therefore recorded as false positives
+  (soft-404), not as published discovery documents. docs.aryaka.com and my.aryaka.com
+  sit behind Akamai/Cloudflare bot protection and return 403 to non-browser clients for
+  arbitrary paths. The only real discovery document Aryaka publishes is /llms.txt at the
+  root of www.aryaka.com (content-type text/plain, last-modified 2026-01-24), saved
+  verbatim to llms/aryaka-llms.txt.
+hosts:
+- host: https://www.aryaka.com
+  documents:
+  - path: /llms.txt
+    status: 200
+    content_type: text/plain
+    file: ../llms/aryaka-llms.txt
+    published: true
+  - path: /.well-known/security.txt
+    status: 200
+    published: false
+    reason: soft-404 HTML shell
+  - path: /.well-known/openid-configuration
+    status: 200
+    published: false
+    reason: soft-404 HTML shell
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    published: false
+    reason: soft-404 HTML shell
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    published: false
+    reason: soft-404 HTML shell
+  - path: /.well-known/api-catalog
+    status: 200
+    published: false
+    reason: soft-404 HTML shell
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    published: false
+    reason: soft-404 HTML shell
+  - path: /.well-known/agent-card.json
+    status: 200
+    published: false
+    reason: soft-404 HTML shell
+  - path: /.well-known/agent.json
+    status: 200
+    published: false
+    reason: soft-404 HTML shell
+- host: https://docs.aryaka.com
+  documents:
+  - path: /llms.txt
+    status: 404
+    published: false
+  - path: /.well-known/security.txt
+    status: 403
+    published: false
+  - path: /.well-known/openid-configuration
+    status: 403
+    published: false
+  - path: /.well-known/agent-card.json
+    status: 403
+    published: false
+  - path: /.well-known/agent.json
+    status: 403
+    published: false
+- host: https://my.aryaka.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+    published: false
+  - path: /.well-known/openid-configuration
+    status: 403
+    published: false
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+    published: false
+  - path: /.well-known/agent-card.json
+    status: 403
+    published: false
+  - path: /.well-known/agent.json
+    status: 403
+    published: false
+- host: https://api.aryaka.com
+  documents:
+  - path: /
+    status: 000
+    published: false
+    reason: >-
+      Host resolves to 199.59.224.16 (domain-parking range) and refuses HTTPS
+      connections. There is no Aryaka API host at this name.
+security_txt: none
+api_catalog: none
+openid_configuration: none
+x-evidence:
+  probed: '2026-08-02'
+  hosts_probed:
+  - www.aryaka.com
+  - aryaka.com
+  - docs.aryaka.com
+  - my.aryaka.com
+  - api.aryaka.com
+  - portal.aryaka.com
+  - developer.aryaka.com

@@ -1,0 +1,41 @@
+generated: '2026-08-02'
+method: searched
+source: https://www.aryaka.com/services-terms/
+note: >-
+  Aryaka has no public API contract, so there is no API versioning scheme, no deprecation
+  policy and no Sunset/Deprecation header behaviour to record. Recorded absences below are
+  probe results, not assumptions. No `StatusPage` and no `Deprecation` pointer is emitted
+  in apis.yml because neither surface exists publicly.
+versioning:
+  scheme: none
+  current: null
+  docs: null
+  detail: >-
+    Aryaka versions the MyAryaka portal experience internally (the documentation carries
+    v1/v2/v3 variants of SLA reports, deployment overview, contract details and quote
+    details pages), and versions the platform through named seasonal releases. Neither is
+    an API versioning contract.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  detail: no public deprecation or sunset policy published
+sla:
+  url: https://www.aryaka.com/services-terms/
+  uptime_target: null
+  detail: >-
+    SLAs are contractual, described in the Aryaka Services Description and Terms and
+    reported per customer through SLA reports in MyAryaka
+    (https://docs.aryaka.com/space/KNOW/1509471/SLA+reports+(v2)). No public uptime
+    commitment number was found on a live page.
+status_page: none
+status_page_probes:
+- {url: 'https://status.aryaka.com', result: does-not-resolve}
+- {url: 'https://aryaka.statuspage.io', result: generic-atlassian-marketing-page, published: false}
+- {url: 'https://trust.aryaka.com', result: does-not-resolve}
+support:
+  contact: https://docs.aryaka.com/space/KNOW/1542320/Contact+Aryaka+Customer+Support
+  ticketing: https://docs.aryaka.com/space/KNOW/1542564/Access+the+Ticketing+Portal
+  noc: 24x7 global network operations centers, included with the site license
+deprecated_operations: []
+x-evidence:
+  probed: '2026-08-02'

@@ -1,0 +1,76 @@
+generated: '2026-08-02'
+method: searched
+source: https://docs.aryaka.com/space/KNOW/1510247/Aryaka+Identity+Management
+docs: https://docs.aryaka.com/space/KNOW/862388286/Configure+SSO
+scope: platform-and-portal
+note: >-
+  SCOPE MATTERS: Aryaka publishes no public API, so there are no OpenAPI securitySchemes
+  to derive from and nothing here describes API authorization. What Aryaka does document
+  in depth is Aryaka Identity Management (AIM) — the identity, SSO and role-based access
+  control model for the MyAryaka customer portal and the MyAryaka Partner Portal, plus
+  the network-user identity model used by the security engines. That is what this profile
+  records. There is no documented API key, bearer token, or OAuth client-credentials
+  surface for programmatic access; scopes/ is therefore intentionally absent.
+summary:
+  types: [saml2, openid-connect, ldap, directory, password]
+  api_key_in: []
+  oauth2_flows: []
+  api_authentication: none-published
+schemes:
+- name: Aryaka Identity Management (AIM)
+  type: identity-provider-integration
+  description: >-
+    AIM is Aryaka's identity layer for portal and network-user authentication. It can
+    federate to an external IdP or use Aryaka's own IdP.
+  backends:
+  - {name: "Aryaka's IdP", docs: "https://docs.aryaka.com/space/KNOW/1091371017/Configure+AIM+for+Aryaka's+IdP"}
+  - {name: Active Directory, docs: 'https://docs.aryaka.com/space/KNOW/1090388026/Configure+AIM+for+Active+Directory'}
+  - {name: LDAP, docs: 'https://docs.aryaka.com/space/KNOW/1090191369/Configure+AIM+for+LDAP'}
+  - {name: Microsoft Entra ID (SAML), docs: 'https://docs.aryaka.com/space/KNOW/203325458/Configure+Microsoft+Entra+for+AIM'}
+  - {name: Okta (SAML), docs: 'https://docs.aryaka.com/space/KNOW/144638068/Configure+Okta+SAML+for+AIM'}
+  - {name: Cisco Duo (SAML/MFA), docs: 'https://docs.aryaka.com/space/KNOW/277381162/Configure+Cisco+Duo+for+AIM'}
+  sources: [docs.aryaka.com]
+- name: MyAryaka portal SSO
+  type: saml2
+  description: >-
+    SAML 2.0 single sign-on into the MyAryaka portal, configurable against Azure AD/Entra
+    and Okta. OIDC is supported through the Okta integration catalog listing.
+  login_url: https://my.aryaka.com/
+  docs:
+  - https://docs.aryaka.com/space/KNOW/862388286/Configure+SSO
+  - https://docs.aryaka.com/space/KNOW/862486592/Log+in+to+MyAryaka+using+SSO
+  - https://docs.aryaka.com/space/KNOW/1268613131/Configure+SSO+with+Azure+AD
+  - https://docs.aryaka.com/space/KNOW/1268809736/Configure+SSO+with+Okta
+  sources: [docs.aryaka.com]
+- name: MyAryaka Partner Portal SSO
+  type: saml2
+  description: SSO and delegated access control for "Powered by Aryaka" partners and MSPs.
+  login_url: https://aryaka.my.site.com/partnercommunity/CommunityLogin
+  docs:
+  - https://docs.aryaka.com/space/PTNR/784072990/Configure+partner+SSO
+  - https://docs.aryaka.com/space/PTNR/784597057/Manage+access+control
+  sources: [docs.aryaka.com]
+authorization:
+  model: role-based-access-control
+  description: >-
+    Roles, user groups and users are managed per customer and per partner tenant, with
+    importable role definitions and a documented RBAC FAQ. Partner tenants carry a
+    separate role/user/group surface over their downstream customers.
+  docs:
+  - https://docs.aryaka.com/space/KNOW/774242406/Access+Control+overview
+  - https://docs.aryaka.com/space/KNOW/774438999/Add,+edit,+and+delete+roles
+  - https://docs.aryaka.com/space/KNOW/1269170384/FAQ:+How+do+I+implement+role-based+access+control?
+network_user_identity:
+  description: >-
+    A separate identity surface: mapping network users to identities so ZTNA, SWG, CASB
+    and SaaS-application access-control policies can be written against users and groups.
+  docs: https://docs.aryaka.com/space/KNOW/1272545378/Network+user+identity+management
+absences:
+  api_keys: not-published
+  bearer_tokens: not-published
+  oauth2: not-published
+  mutual_tls: not-published
+  openid_connect_discovery: 'no /.well-known/openid-configuration served on any Aryaka host'
+x-evidence:
+  fetched: '2026-08-02'
+  method: docs sitemap enumeration + live HTTP probes

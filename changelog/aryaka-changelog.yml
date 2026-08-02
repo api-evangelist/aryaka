@@ -1,0 +1,40 @@
+generated: '2026-08-02'
+method: searched
+source: https://www.aryaka.com/press/
+docs: https://www.aryaka.com/press/
+scheme: seasonal-named-release
+note: >-
+  Aryaka publishes no developer/API changelog and no release-notes space in
+  docs.aryaka.com — there is no public API contract to version. What it does ship on a
+  cadence is a named seasonal platform release, announced through the press archive.
+  Recorded here so the release cadence is captured; this is a product changelog, not an
+  API changelog. Only entries verified against a live Aryaka page are listed.
+current_release: Unified SASE as a Service 2.0
+entries:
+- version: Unified SASE as a Service 2.0
+  date: '2025-11'
+  breaking: false
+  highlights:
+  - Aryaka Unified SASE as a Service 2.0 announced.
+  source: https://www.aryaka.com/press/
+- version: Winter '25
+  date: '2025-02-19'
+  breaking: false
+  highlights:
+  - "AI>Observe added to the platform — AI-powered observability for threat detection, prevention and analytics."
+  - Dynamic Points of Presence (PoPs) for more flexible connectivity and regulatory placement.
+  - Simplified service packaging.
+  source: https://www.aryaka.com/press/winter-2025-release-ai-observe/
+- version: Fall '24
+  date: '2024-10-08'
+  breaking: false
+  highlights:
+  - Cloud Access Security Broker (CASB) added to Unified SASE as a Service.
+  - Validated interoperability with Menlo Security Remote Browser Isolation (RBI).
+  source: https://www.aryaka.com/press/aryaka-fall-2024-update-expands-unified-sase/
+surfaces:
+  press_archive: https://www.aryaka.com/press/
+  newsletters: https://www.aryaka.com/newsletters/
+  blog: https://www.aryaka.com/blog/
+  api_changelog: none
+  docs_release_notes: none

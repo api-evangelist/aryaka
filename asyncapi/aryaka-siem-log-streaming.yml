@@ -1,0 +1,37 @@
+generated: '2026-08-02'
+method: searched
+source: https://docs.aryaka.com/space/KNOW/289505287/Configure+SIEM+integration
+spec_type: none
+surface: log-streaming
+note: >-
+  Aryaka publishes NO AsyncAPI document and NO webhook catalog. This file records the one
+  machine-consumable outbound event surface Aryaka does document: SIEM log streaming from
+  the Aryaka service to a customer-operated SIEM, configured inside MyAryaka. Aryaka
+  publishes a per-log-type attribute reference for each stream, which is the closest thing
+  it ships to a message schema. Because this is log forwarding rather than an HTTP webhook
+  or a published AsyncAPI channel set, NO `AsyncAPI` and NO `Webhooks` pointer is emitted
+  in apis.yml — recording one would overstate Aryaka's event posture.
+configuration:
+  location: MyAryaka portal
+  docs: https://docs.aryaka.com/space/KNOW/289505287/Configure+SIEM+integration
+streams:
+- name: Security logs
+  description: Security-engine events forwarded to the customer SIEM.
+  attributes_reference: https://docs.aryaka.com/space/KNOW/237961265/Security+log+attributes+for+SIEM+integration
+- name: Flow logs
+  description: SD-WAN flow records forwarded to the customer SIEM.
+  attributes_reference: https://docs.aryaka.com/space/KNOW/736362516/Flow+log+attributes+for+SIEM+integration
+- name: Private Access logs
+  description: Universal ZTNA / Private Access session events forwarded to the customer SIEM.
+  attributes_reference: https://docs.aryaka.com/space/KNOW/794558469/Private+Access+log+attributes+for+SIEM+integration
+related_docs:
+- title: SIEM
+  url: https://docs.aryaka.com/space/KNOW/1608380
+- title: Security logs
+  url: https://docs.aryaka.com/space/KNOW/1509440/Reports
+- title: Log explorer
+  url: https://docs.aryaka.com/space/KNOW
+x-evidence:
+  fetched: '2026-08-02'
+  url: https://docs.aryaka.com/space/KNOW/289505287/Configure+SIEM+integration
+  http_status: 200

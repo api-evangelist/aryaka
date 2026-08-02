@@ -1,23 +1,112 @@
 aid: aryaka
 name: Aryaka
-description: 'Aryaka is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Aryaka Networks, Inc. is a San Mateo, California company that delivers Unified SASE
+  as a Service — a converged, fully managed networking and security platform sold as a
+  single service rather than as stitched-together appliances. The platform combines
+  Aryaka's own private global Layer-2/Layer-3 core network and PoP footprint (Global
+  Connectivity), a fully managed SD-WAN that replaces MPLS, WAN and application
+  acceleration (TCP optimization, deduplication, compression, SMB and SSL acceleration),
+  multi-cloud on-ramps to AWS, Azure, Google Cloud, Oracle and Alibaba, and a complete
+  single-pass security stack — next-generation firewall, secure web gateway, CASB,
+  DNS filtering, URL and domain reputation, anti-malware, IPS, tenant restriction and
+  Universal ZTNA / secure remote access. Newer AI-oriented services, AI>Perform and
+  AI>Secure, accelerate and inspect GenAI and LLM traffic. Customers operate the service
+  through MyAryaka, a multi-tenant orchestration, monitoring and business-management
+  portal (dashboards, site and policy configuration, alerting, log explorer, SLA and
+  billing reports, order and contract management), with a companion MyAryaka Partner
+  Portal for MSPs and telcos in the "Powered by Aryaka" program. Aryaka publishes a
+  large public documentation portal at docs.aryaka.com and an llms.txt at the root of
+  aryaka.com, and documents SIEM log-streaming integration with published log-attribute
+  schemas, but as of this profiling round it publishes no public developer portal,
+  no machine-readable API contract (OpenAPI/AsyncAPI/GraphQL), no client SDKs and no
+  MCP or A2A agent surface — programmatic access is gated behind the MyAryaka portal.
+image: https://www.aryaka.com/wp-content/uploads/2025/03/aryaka-logo-new.jpg
 url: https://raw.githubusercontent.com/api-evangelist/aryaka/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
+x-enrichment:
+  date: '2026-08-02'
+  status: enriched
+  artifacts_added: 10
+  pass: local-v1
 created: '2026-08-02'
 modified: '2026-08-02'
 tags:
 - Company
-apis: []
+- Networking
+- SASE
+- SD-WAN
+- Network Security
+- Zero Trust
+- ZTNA
+- Cloud Connectivity
+- Managed Services
+- Firewall
+- Secure Web Gateway
+- WAN Optimization
+- Multi-Cloud
+- Telecommunications
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis: []
 common:
+- type: DomainSecurity
+  url: security/aryaka-domain-security.yml
 - type: Website
+  url: https://www.aryaka.com/
+- type: Documentation
+  url: https://docs.aryaka.com/
+- type: GettingStarted
+  url: https://docs.aryaka.com/space/KNOW/136773659/Getting+Started+with+Aryaka+Unified+SASE+as+a+Service
+- type: HelpCenter
+  url: https://docs.aryaka.com/space/KNOW/1606547/MyAryaka+Help+Home
+- type: Support
+  url: https://docs.aryaka.com/space/KNOW/1542320/Contact+Aryaka+Customer+Support
+- type: Login
+  name: MyAryaka customer portal
+  url: https://my.aryaka.com/
+- type: Partners
+  name: MyAryaka Partner Portal
+  url: https://aryaka.my.site.com/partnercommunity/CommunityLogin
+- type: Blog
+  url: https://www.aryaka.com/blog/
+- type: BlogRSS
+  url: https://www.aryaka.com/blog/feed/
+- type: Press
+  url: https://www.aryaka.com/press/
+- type: FAQ
+  url: https://www.aryaka.com/faq/
+- type: TermsOfService
+  url: https://www.aryaka.com/terms-and-conditions/
+- type: PrivacyPolicy
+  url: https://www.aryaka.com/privacy-policy/
+- type: Legal
+  name: Aryaka Services Description and Terms
+  url: https://www.aryaka.com/services-terms/
+- type: ContactUs
+  url: https://www.aryaka.com/contact-us/
+- type: Careers
+  url: https://www.aryaka.com/company/careers/
+- type: Compliance
+  name: SOC 2 Type II and ISO 27001 recertification
+  url: https://www.aryaka.com/blog/aryaka-has-successfully-completed-soc-2-and-iso-27001-recertification-audits/
+- type: LLMsTxt
+  url: llms/aryaka-llms.txt
+- type: WellKnown
+  url: well-known/aryaka-well-known.yml
+- type: Authentication
+  url: authentication/aryaka-authentication.yml
+- type: Conformance
+  url: conformance/aryaka-conformance.yml
+- type: Lifecycle
+  url: lifecycle/aryaka-lifecycle.yml
+- type: ChangeLog
+  url: changelog/aryaka-changelog.yml
+- type: Investors
+  name: Forge Global secondary-market listing
   url: https://forgeglobal.com/aryaka_stock/

@@ -1,0 +1,40 @@
+# Aryaka Networks
+
+> Aryaka is the leader in Unified SASE as a Service, offering a fully integrated networking and security platform delivered as a service. The platform combines SD-WAN, Global Connectivity, Multi-Cloud acceleration, and a complete SASE security stack (NGFW, SWG, CASB, DLP) into a single-pass architecture.
+
+## Core Platform & Products
+- [Unified SASE as a Service](https://www.aryaka.com/products-and-services/ ): The flagship converged network and security platform. Includes details on single-pass architecture and as-a-service delivery.
+- [Aryaka SD-WAN](https://www.aryaka.com/products-and-services/aryaka-sd-wan/ ): Technical overview of the fully managed SD-WAN solution, replacing MPLS with a global private backbone.
+- [AI>Perform](https://www.aryaka.com/products-and-services/ai-perform/ ): Details on GenAI network acceleration and performance optimization for AI workloads.
+- [AI>Secure](https://www.aryaka.com/datasheet/ai-secure/ ): Security specifications for LLM/AI traffic, including firewalling and privacy controls for AI applications.
+- [Universal ZTNA](https://www.aryaka.com/datasheet/universal-ztna/ ): Zero Trust Network Access technical specs, covering secure remote access for users and devices.
+- [Global Connectivity](https://www.aryaka.com/products-and-services/global-connectivity/ ): Information on Aryaka’s private global core network (L2 private backbone) and PoP distribution.
+
+## Solutions & Use Cases
+- [MPLS to SD-WAN Migration](https://www.aryaka.com/solutions/mpls-to-sd-wan-migration/ ): Strategic guide and technical benefits of migrating from legacy MPLS to cloud-first SD-WAN.
+- [Multi-Cloud Networking](https://www.aryaka.com/solutions/multi-cloud-saas-acceleration/ ): Architecture for connecting to AWS, Azure, Google Cloud, and Oracle Cloud via private direct connects.
+- [China Connectivity](https://www.aryaka.com/global-connectivity/china/ ): Specific regulatory and technical details on providing compliant, high-performance connectivity into and out of China.
+- [Application Acceleration](https://www.aryaka.com/solutions/application-acceleration/ ): Technical methods for WAN optimization, TCP/deduplication, and application performance improvement.
+
+## Technical Documentation & Knowledge Base
+> authoritative technical guides, configuration manuals, and deployment specs.
+
+- [Aryaka Documentation Portal](https://docs.aryaka.com/ ): The central hub for all technical manuals, configuration guides, and API documentation.
+- [MyAryaka Customer Help](https://docs.aryaka.com/space/KNOW/1606547/MyAryaka+Help+Home ): User guides for the MyAryaka orchestration and visibility portal.
+- [Technical Briefs](https://docs.aryaka.com/space/KNOW/1606549/Technical+Briefs ): Deep-dive architectural documents and whitepapers on specific protocol implementations.
+- [Deployment Guides](https://docs.aryaka.com/space/KNOW/1606550/Deployment+Guides ): Step-by-step instructions for deploying Aryaka Network Access Points (ANAPs) and cloud connectors.
+
+## Threat Research & Industry Reports
+> Primary source data for cybersecurity trends and network performance benchmarks.
+
+- [Threat Research Lab](https://www.aryaka.com/threat-research-lab/ ): Analysis of active cyber threats, malware trends, and network vulnerability reports.
+- [State of the WAN Report](https://www.aryaka.com/state-of-the-wan/ ): Annual comprehensive report on global WAN trends, AI adoption in networking, and security convergence statistics.
+
+## Company & Compliance
+- [About Aryaka](https://www.aryaka.com/about-us/ ): Corporate overview, leadership, and history.
+- [Trust & Security Center](https://www.aryaka.com/legal/security-compliance/ ): Details on ISO 27001, SOC 2, GDPR, and HIPAA compliance certifications.
+- [Service Provider Partners](https://www.aryaka.com/partners/service-providers/ ): Information for MSPs and telcos on the "Powered by Aryaka" program.
+
+## Optional Resources
+- [Aryaka Blog](https://www.aryaka.com/blog/ ): News, product updates, and thought leadership articles.
+- [Events & Webinars](https://www.aryaka.com/events-webinars/ ): On-demand video content and upcoming technical workshops.
