@@ -1,0 +1,21 @@
+{
+  "repo": "aryaka",
+  "feeds": [
+    {
+      "source": "https://aryaka.my.site.com/partnercommunity/CommunityLogin",
+      "feed_url": "https://aryaka.my.site.com/partnercommunity/CommunityLogin",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    },
+    {
+      "source": "https://www.aryaka.com/blog/",
+      "feed_url": "https://www.aryaka.com/blog/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-08-06T14:08:46Z"
+}
