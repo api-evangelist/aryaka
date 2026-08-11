@@ -55,6 +55,8 @@ maintainers:
   email: info@apis.io
 apis: []
 common:
+- type: MCPServer
+  url: mcp/aryaka-mcp.yml
 - type: DomainSecurity
   url: security/aryaka-domain-security.yml
 - type: Website
