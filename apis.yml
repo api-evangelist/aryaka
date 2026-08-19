@@ -25,7 +25,7 @@ image: https://www.aryaka.com/wp-content/uploads/2025/03/aryaka-logo-new.jpg
 url: https://raw.githubusercontent.com/api-evangelist/aryaka/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 x-enrichment:
   date: '2026-08-02'
   status: enriched
