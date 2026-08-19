@@ -2,12 +2,10 @@ generated: '2026-08-02'
 method: searched
 status: none
 source: live probes + registry/docs search, 2026-08-02
-note: >-
-  Aryaka publishes no hosted or remote MCP server, and there is no OpenAPI from which a
-  candidate tool list could be honestly derived — so no `tools[]` are listed and NO
-  `MCPServer` pointer is emitted in apis.yml. No tool crosswalk is written either
-  (a crosswalk requires an MCP or GraphQL surface bound to real operationIds).
-  Recorded so a later round can re-probe rather than re-search from scratch.
+note: Aryaka publishes no hosted or remote MCP server, and there is no OpenAPI from which a candidate
+  tool list could be honestly derived — so no `tools[]` are listed and NO `MCPServer` pointer is emitted
+  in apis.yml. No tool crosswalk is written either (a crosswalk requires an MCP or GraphQL surface bound
+  to real operationIds). Recorded so a later round can re-probe rather than re-search from scratch.
 server: null
 tools: []
 discovery:
@@ -23,11 +21,31 @@ discovery:
   graphql_endpoints_found: []
   openapi_documents_found: []
   results:
-  - {probe: 'GET https://www.aryaka.com/.well-known/ai-plugin.json', status: 200, valid: false, reason: soft-404 HTML shell}
-  - {probe: 'GET https://api.aryaka.com/openapi.json', status: 000, valid: false, reason: 'host does not serve HTTPS (parked IP 199.59.224.16)'}
-  - {probe: 'GET https://docs.aryaka.com/openapi.json', status: 403, valid: false}
-  - {probe: 'GET https://my.aryaka.com/openapi.json', status: 403, valid: false}
-  - {probe: 'GET https://www.aryaka.com/openapi.json | /openapi.yaml | /swagger.json | /api-docs', status: 200, valid: false, reason: soft-404 HTML shell}
-  - {probe: 'docs.aryaka.com/sitemap.xml enumeration (384 pages, spaces KNOW/PTNR/VW)', result: 'no API reference, no developer, no OpenAPI page'}
-  - {probe: 'npm search @modelcontextprotocol aryaka / mcp registries', result: none}
+  - probe: GET https://www.aryaka.com/.well-known/ai-plugin.json
+    status: 200
+    valid: false
+    reason: soft-404 HTML shell
+  - probe: GET https://api.aryaka.com/openapi.json
+    status: 0
+    valid: false
+    reason: host does not serve HTTPS (parked IP 199.59.224.16)
+  - probe: GET https://docs.aryaka.com/openapi.json
+    status: 403
+    valid: false
+  - probe: GET https://my.aryaka.com/openapi.json
+    status: 403
+    valid: false
+  - probe: GET https://www.aryaka.com/openapi.json | /openapi.yaml | /swagger.json | /api-docs
+    status: 200
+    valid: false
+    reason: soft-404 HTML shell
+  - probe: docs.aryaka.com/sitemap.xml enumeration (384 pages, spaces KNOW/PTNR/VW)
+    result: no API reference, no developer, no OpenAPI page
+  - probe: npm search @modelcontextprotocol aryaka / mcp registries
+    result: none
 llms_txt: llms/aryaka-llms.txt
+deployment:
+  mode: none
+  verified: derived
+  checked: '2026-08-12'
+  source: catalog MCP census
