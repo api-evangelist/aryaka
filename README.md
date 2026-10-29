@@ -64,53 +64,99 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Aryaka Networks, Inc. delivers **Unified SASE as a Service** — a converged, fully managed
-networking and security platform combining a private global core network, fully managed
-SD-WAN, WAN/application acceleration, multi-cloud on-ramps, and a single-pass security
-stack (NGFW, SWG, CASB, DNS filtering, anti-malware, IPS, Universal ZTNA), operated
-through the **MyAryaka** portal.
+Aryaka Networks, Inc. is a San Mateo, California company that delivers Unified SASE as a Service — a converged, fully managed networking and security platform sold as a single service rather than as stitched-together appliances. The platform combines Aryaka's own private global Layer-2/Layer-3 core network and PoP footprint (Global Connectivity), a fully managed SD-WAN that replaces MPLS, WAN and application acceleration (TCP optimization, deduplication, compression, SMB and SSL acceleration), multi-cloud on-ramps to AWS, Azure, Google Cloud, Oracle and Alibaba, and a complete single-pass security stack — next-generation firewall, secure web gateway, CASB, DNS filtering, URL and domain reputation, anti-malware, IPS, tenant restriction and Universal ZTNA / secure remote access. Newer AI-oriented services, AI>Perform and AI>Secure, accelerate and inspect GenAI and LLM traffic. Customers operate the service through MyAryaka, a multi-tenant orchestration, monitoring and business-management portal (dashboards, site and policy configuration, alerting, log explorer, SLA and billing reports, order and contract management), with a companion MyAryaka Partner Portal for MSPs and telcos in the "Powered by Aryaka" program. Aryaka publishes a large public documentation portal at docs.aryaka.com and an llms.txt at the root of aryaka.com, and documents SIEM log-streaming integration with published log-attribute schemas, but as of this profiling round it publishes no public developer portal, no machine-readable API contract (OpenAPI/AsyncAPI/GraphQL), no client SDKs and no MCP or A2A agent surface — programmatic access is gated behind the MyAryaka portal.
 
-- Website — https://www.aryaka.com/
-- Documentation — https://docs.aryaka.com/
-- MyAryaka portal — https://my.aryaka.com/
-- Secondary-market listing — https://forgeglobal.com/aryaka_stock/
+**Areas:** Company · Networking · SASE · SD-WAN · Network Security · Zero Trust · ZTNA · Cloud Connectivity · Managed Service · Firewall · Secure Web Gateway · WAN Optimization
 
-## API surface
+## Aryaka on APIs.io
 
-**Aryaka publishes no public developer portal and no machine-readable API contract.**
-Contract discovery was run on 2026-08-02 against every Aryaka host (`www.aryaka.com`,
-`aryaka.com`, `docs.aryaka.com`, `my.aryaka.com`, `api.aryaka.com`, `developer.aryaka.com`,
-`portal.aryaka.com`) for OpenAPI/Swagger, GraphQL introspection, MCP `tools/list`, and A2A
-agent cards at both `/.well-known/agent-card.json` and `/.well-known/agent.json`. Every
-probe missed. `api.aryaka.com` resolves into a domain-parking range and serves nothing.
-`www.aryaka.com` answers **HTTP 200 with a "Page Not Found" HTML shell for every unknown
-path**, so its 200s on `/.well-known/*` are soft-404s, not published documents — see
-[`well-known/aryaka-well-known.yml`](well-known/aryaka-well-known.yml) for the full probe
-table. The docs sitemap (384 pages across the KNOW/PTNR/VW spaces) contains no API
-reference. Programmatic access is gated behind the MyAryaka portal.
+Everything profiled for Aryaka is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/aryaka/](https://apis.io/providers/aryaka/)** — or go straight to one of the APIs or properties below.
 
-Per the pipeline's search-only rule, **no A2A agent card artifact was written** — an agent
-card may only ever be harvested from the provider's own host.
+### Published properties
 
-## What Aryaka does publish
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-| Artifact | Method | Note |
-|---|---|---|
-| [`llms/aryaka-llms.txt`](llms/aryaka-llms.txt) | searched | Real `llms.txt` served at `https://www.aryaka.com/llms.txt` (200, `text/plain`), saved verbatim |
-| [`well-known/aryaka-well-known.yml`](well-known/aryaka-well-known.yml) | probed | Full `/.well-known/` probe table across all hosts, with soft-404s flagged |
-| [`authentication/aryaka-authentication.yml`](authentication/aryaka-authentication.yml) | searched | Aryaka Identity Management (AIM) — SAML 2.0/OIDC SSO (Entra, Okta, Duo, AD, LDAP), portal RBAC, network-user identity. **Portal auth, not API auth** |
-| [`conformance/aryaka-conformance.yml`](conformance/aryaka-conformance.yml) | searched | SOC 2 Type II, ISO 27001, CSA CCM, GDPR, CCPA verified; FIPS readiness; HIPAA claim unsubstantiated |
-| [`changelog/aryaka-changelog.yml`](changelog/aryaka-changelog.yml) | searched | Named seasonal platform releases via the press archive; no API changelog exists |
-| [`lifecycle/aryaka-lifecycle.yml`](lifecycle/aryaka-lifecycle.yml) | searched | No public status page, no deprecation policy; SLAs are contractual |
-| [`asyncapi/aryaka-siem-log-streaming.yml`](asyncapi/aryaka-siem-log-streaming.yml) | searched | SIEM log streaming (security / flow / Private Access logs) with published attribute references. Not AsyncAPI and not webhooks — no `AsyncAPI`/`Webhooks` pointer emitted |
-| [`security/aryaka-domain-security.yml`](security/aryaka-domain-security.yml) | probed | TLS 1.3 everywhere; HSTS only on `docs.aryaka.com`; SPF + DMARC (quarantine); no DNSSEC, no CAA |
-| [`packages/aryaka-packages.yml`](packages/aryaka-packages.yml) | searched | Ten registries + GitHub searched — zero first-party SDKs |
-| [`mcp/aryaka-mcp.yml`](mcp/aryaka-mcp.yml) | searched | No MCP server; probe record kept so a later round can re-check |
+#### AsyncAPI (1)
 
-### Notable finding
+Event-driven and webhook contracts.
 
-Aryaka's own `llms.txt` links a "Trust & Security Center" at
-`https://www.aryaka.com/legal/security-compliance/` and attributes HIPAA compliance to it.
-**That URL returns the site's 404 page.** The SOC 2 / ISO 27001 / GDPR / CCPA claims were
-independently verified elsewhere on the site; the HIPAA claim could not be substantiated on
-any live page and is recorded as `conforms: false` with that caveat.
+- [Aryaka Siem Log Streaming](https://apis.io/asyncapis/aryaka/aryaka-siem-log-streaming/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [aryaka-mcp.yml](https://apis.io/servers/aryaka/aryaka-mcp-yml/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Aryaka Authentication](https://apis.io/security/aryaka/aryaka-authentication/)
+- [Aryaka Domain Security](https://apis.io/security/aryaka/aryaka-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.aryaka.com/)
+- [Documentation](https://docs.aryaka.com/)
+- [Getting started](https://docs.aryaka.com/space/KNOW/136773659/Getting+Started+with+Aryaka+Unified+SASE+as+a+Service)
+- [Support](https://docs.aryaka.com/space/KNOW/1542320/Contact+Aryaka+Customer+Support)
+- [Blog](https://www.aryaka.com/blog/)
+- [Compliance](https://www.aryaka.com/blog/aryaka-has-successfully-completed-soc-2-and-iso-27001-recertification-audits/)
+- [Terms of service](https://www.aryaka.com/terms-and-conditions/)
+- [Privacy policy](https://www.aryaka.com/privacy-policy/)
+
+## API Evangelist rating
+
+**Kin Score 36.8** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 56.3 |
+| Contract quality | 39.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 15.8 |
+| Developer ergonomics | 40.5 |
+| Access clarity | 42.1 |
+
+**Agent readiness 19.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | yes |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 25.0** — Telecommunications
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/aryaka/](https://apis.io/providers/aryaka/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Aryaka: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/aryaka/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
